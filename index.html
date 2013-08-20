@@ -1,0 +1,24 @@
+---
+layout: default
+---
+
+
+{% for post in site.posts %}
+
+  <article>
+    <h2 class="link-title"><a href="{{ post.link }}" title="Go to {{ post.title }}">{{ post.title }}</a> <a class="post-url" href="{{ post.url }}">#</a></h2>
+
+    <div class="post-meta">
+      <a class="post-meta-link" href="{{ post.link }}" title="Go to {{ post.title }}">{{ post.link }}</a>
+    </div>
+
+    {{ post.content }}
+
+    <div class="post-meta">
+      <time datetime="{{ post.date | date: "%Y-%m-%d" }}">{{ post.date | date_to_long_string }}</time> &mdash; Tags: {{ post | tags }}
+    </div>
+  </article>
+
+{% endfor %}
+
+
