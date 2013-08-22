@@ -112,7 +112,7 @@ module Jekyll
       tags = obj['tags'].dup
       tags.map! { |t| t.first } if tags.first.is_a?(Array)
       tags.map! { |t| tag_link(t, tag_url(t), :rel => 'tag') if t.is_a?(String) }.compact!
-      tags.join(', ')
+      tags.join(' ')
     end
 
     def active_tag_data(site = Tagger.site)
